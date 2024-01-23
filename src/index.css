@@ -1,0 +1,16 @@
+ul li{
+    border: 1px solid grey;
+    width: 500px;
+    margin: auto;
+    list-style-type: none;
+    padding: 5px;
+}
+
+h2{
+    text-align: center;
+}
+input{
+    border: none;
+    width: 500px;
+}
+
