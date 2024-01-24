@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
+import { FaTrashAlt } from "react-icons/fa";
 
 const Home = () => {
     const [inputvalue, setInputvalue] = useState("");
     const [todo, setTodo] = useState([]);
+    
+
 
     return (
         <>
@@ -11,19 +14,18 @@ const Home = () => {
                 <ul>
                     <li>
                         <input type="text"
-                            onChange={e => setInputvalue(e.target.value)}
-                            value={inputvalue}
-                            onKeyPress
-                            placeholder="What needs to be done"></input>
+                            onChange={(e) => setInputvalue(e.target.value)} value={inputvalue}
+                            onkeypress={(e) => {
+                                if (e.key === "Enter") {
+                                    setTodo(todo.concat(inputvalue));
+                                }
+                            }}
+                            placeholder="What needs to be done" ></input>
                     </li>
-                    <li>Make the bed</li>
-                    <li>Wash my hands</li>
-                    <li>Eat</li>
-                    <li>Walk the dog</li>
-
-
+                  
                 </ul>
-            </div>
+                <div>{todo.length} tasks</div>
+            </div >
 
         </>
     )
